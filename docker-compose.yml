@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    image: buddyworks/java-segfault-demo:latest
+    ports:
+      - "8080:8080"
+  web:
+    image: buddyworks/js-segfault-demo:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
