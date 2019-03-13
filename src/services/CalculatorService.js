@@ -6,28 +6,32 @@ class CalculatorService {
     return get('sum', {
       a: firstNumber,
       b: secondNumber
-    });
+    })
+      .then(data => data.result);
   }
 
   static async substract(firstNumber, secondNumber) {
     return get('substract', {
       a: firstNumber,
       b: secondNumber
-    });
+    })
+      .then(data => data.result);
   }
 
   static async multiply(firstNumber, secondNumber) {
     return get('multiply', {
       a: firstNumber,
       b: secondNumber
-    });
+    })
+      .then(data => data.result);
   }
 
   static async divide(firstNumber, secondNumber) {
     return get('divide', {
       a: firstNumber,
       b: secondNumber
-    });  
+    })
+      .then(data => data.result);
   }
 }
 
