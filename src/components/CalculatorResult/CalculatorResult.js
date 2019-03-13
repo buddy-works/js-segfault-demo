@@ -10,11 +10,16 @@ const CalculatorResult = ({ title, fetchResult }) => {
     event.preventDefault();
     event.stopPropagation();
 
-    setResult(await fetchResult(firstNumber, secondNumber));
+    try {
+      const calculatedResult = await fetchResult(firstNumber, secondNumber)
+      setResult(calculatedResult);
+    } catch (e) {
+      console.log('fetch result error: ', e);
+    }
   }
 
   return (
-    <Form onSubmit={e => handleSubmit(e)}>
+    <Form onSubmit={e => handleSubmit(e)} className="mb-4">
       <h3>{title}</h3>
       <Form.Row>
         <Form.Group as={Col}>

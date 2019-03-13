@@ -3,6 +3,7 @@ import CalculatorContainer from './components/CalculatorContainer/CalculatorCont
 import CalculatorNavbar from './components/CalculatorNavbar/CalculatorNavbar';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 const App = () => (
   <>

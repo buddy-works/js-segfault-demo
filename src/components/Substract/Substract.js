@@ -2,12 +2,12 @@ import React from 'react';
 import CalculatorResult from "../CalculatorResult/CalculatorResult";
 import CalculatorService from '../../services/CalculatorService';
 
-const Sum = () => {
+const Substract = () => {
   async function fetchResult(firstNumber, secondNumber) {
-    return await CalculatorService.sum(firstNumber, secondNumber);
+    return await CalculatorService.substract(firstNumber, secondNumber);
   };
 
-  return <CalculatorResult title="Sum" fetchResult={fetchResult} />
+  return <CalculatorResult title="Substract" fetchResult={fetchResult} />
 };
 
-export default Sum;
+export default Substract;
