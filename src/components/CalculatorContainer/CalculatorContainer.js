@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Sum from '../Sum/Sum';
-import Substract from '../Substract/Substract';
+import Subtract from '../Subtract/Subtract';
 import Multiply from '../Multiply/Multiply';
 import Divide from '../Divide/Divide';
 
@@ -10,7 +10,7 @@ const CalculatorContainer = () => (
     <Row className="justify-content-md-center mt-4">
       <Col md="auto" lg="12">
         <Sum />
-        <Substract />
+        <Subtract />
         <Multiply />
         <Divide />
       </Col>

@@ -6,32 +6,28 @@ class CalculatorService {
     return get('sum', {
       a: firstNumber,
       b: secondNumber
-    })
-      .then(data => data.result);
+    });
   }
 
-  static async substract(firstNumber, secondNumber) {
-    return get('substract', {
+  static async subtract(firstNumber, secondNumber) {
+    return get('subtract', {
       a: firstNumber,
       b: secondNumber
-    })
-      .then(data => data.result);
+    });
   }
 
   static async multiply(firstNumber, secondNumber) {
     return get('multiply', {
       a: firstNumber,
       b: secondNumber
-    })
-      .then(data => data.result);
+    });
   }
 
   static async divide(firstNumber, secondNumber) {
     return get('divide', {
       a: firstNumber,
       b: secondNumber
-    })
-      .then(data => data.result);
+    });
   }
 }
 
@@ -39,7 +35,9 @@ function get(path, params = {}) {
   const url = new URL(`${apiUrl}/${path}`);
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
   
-  return fetch(url);
+  return fetch(url)
+    .then(data => data.json())
+    .then(data => data.result);
 }
 
 export default CalculatorService;
